@@ -16,13 +16,13 @@ import miRWfunc2
 # ============================================
 
 # network links
-links = pd.read_csv("Links.csv", index_col=0)
+links = pd.read_csv("data_example/Links.csv", index_col=0)
 
 # expression matrix
-expression_data = pd.read_csv("exprSet.csv", index_col=0)
+expression_data = pd.read_csv("data_example/exprSet.csv", index_col=0)
 
 # CellMarkers.csv is optional
-cellmarker_path = "CellMarkers.csv"
+cellmarker_path = "data_example/CellMarkers.csv"
 has_seed_markers = os.path.exists(cellmarker_path)
 
 if has_seed_markers:
