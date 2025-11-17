@@ -1,4 +1,3 @@
----
 # **miRW: A Multi-Omics Random Walk Framework for Independent Construction of Sample-Specific Protein–Protein Interaction Networks in Cancer**
 
 This repository provides a complete implementation of the *miRW* framework, designed to compute sample-specific protein-protein interaction networks using Random Walk with Restart (RWR).
@@ -9,8 +8,6 @@ The workflow supports two modes:
 * **S2:** Seed setting S₂ (expression only): proteins whose expression exceeded the 90th percentile in the sample.
 
 Both produce importance measures for each sample and network link.
-
----
 
 ## 🔧 **1. Installation**
 
