@@ -1,21 +1,28 @@
-# **miRW: A Multi-Omics Random Walk Framework for Independent Construction of Sample-Specific Protein–Protein Interaction Networks in Cancer**
+---
 
-This repository provides a complete implementation of the *miRW* framework, designed to compute sample-specific protein-protein interaction networks using Random Walk with Restart (RWR).
-The workflow supports two modes:
+# **miRW: A Multi-Omics Random Walk Framework for Independent Construction of Sample-Specific Interaction Networks**
 
-* **S1:** Seed setting S₁ (prior knowledge + expression): proteins whose expression levels exceeded the 90th percentile in the sample or belonged to a predefined set of 1,972 proteins associated with 11 cancer-related cellular states (invasion, metastasis, proliferation, angiogenesis, apoptosis, cell cycle, differentiation, DNA damage, DNA repair, hypoxia, and inflammation)
-* 
-* **S2:** Seed setting S₂ (expression only): proteins whose expression exceeded the 90th percentile in the sample.
+This repository provides a complete implementation of the **miRW** framework, designed to compute sample-specific edge importance scores from gene or miRNA expression data using **Random Walk with Restart (RWR)**.
 
-Both produce importance measures for each sample and network link.
+The workflow supports two computation modes:
 
-## 🔧 **1. Installation**
+* **S1 — Seed-based RWR (optional)**
+  Uses predefined biological marker genes (from `CellMarkers.csv`) as seed nodes.
+
+* **S2 — Seed-free RWR (required)**
+  Computes edge importance using expression data only.
+
+If `CellMarkers.csv` is not provided, the pipeline automatically runs **S2 only**.
+
+---
+
+# 🔧 **1. Installation**
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/bioUroZC/miRW.git
-cd miRW
+cd miRW/miRWsingleLayer
 ```
 
 Install required Python packages:
@@ -36,24 +43,34 @@ scipy
 
 ---
 
-## 📁 **2. Input Data Files**
+# 📁 **2. Input Data Files**
 
-The pipeline requires three input files:
+Example input files are stored in:
 
-### **2.1 CellMarkers.csv**
+```
+miRWsingleLayer/data_example/
+```
 
-A list of cell-type–specific seed nodes.
+The pipeline uses up to **three** CSV files.
+
+---
+
+## **2.1 CellMarkers.csv (optional)**
+
+Cell-type–specific seed nodes for mode S1.
 
 | Column   | Description           |
 | -------- | --------------------- |
 | Marker   | Gene/miRNA identifier |
-| CellType | Cell type category    |
+| CellType | Cell-type category    |
+
+If the file is missing, **S1 is skipped automatically**.
 
 ---
 
-### **2.2 Links.csv**
+## **2.2 Links.csv (required)**
 
-Network edges.
+Interaction network edges.
 
 | Column | Description             |
 | ------ | ----------------------- |
@@ -62,11 +79,11 @@ Network edges.
 
 ---
 
-### **2.3 exprSet.csv**
+## **2.3 exprSet.csv (required)**
 
-Gene or miRNA expression matrix.
+Expression matrix.
 
-* **Rows:** genes/miRNAs
+* **Rows:** genes or miRNAs
 * **Columns:** samples
 * **Values:** expression levels
 
@@ -81,13 +98,28 @@ GeneB       4.8       7.2       6.1
 
 ---
 
-## ▶️ **3. Running the Pipeline**
+# ▶️ **3. Running the Pipeline**
 
-The complete pipeline can be launched using:
+The main workflow is implemented in:
+
+```
+miRWsingleLayer/miRW.py
+```
+
+### **Run S1 + S2 (when CellMarkers.csv exists):**
 
 ```bash
-python run_miRW.py \
+python miRW.py \
   --seed data_example/CellMarkers.csv \
+  --links data_example/Links.csv \
+  --expr data_example/exprSet.csv \
+  --outdir results/
+```
+
+### **Run S2 only (no seed file):**
+
+```bash
+python miRW.py \
   --links data_example/Links.csv \
   --expr data_example/exprSet.csv \
   --outdir results/
@@ -97,43 +129,45 @@ python run_miRW.py \
 
 | Argument   | Description                              |
 | ---------- | ---------------------------------------- |
-| `--seed`   | Path to CellMarkers.csv                  |
-| `--links`  | Path to Links.csv                        |
-| `--expr`   | Path to exprSet.csv                      |
+| `--seed`   | Path to CellMarkers.csv (optional)       |
+| `--links`  | Path to Links.csv (required)             |
+| `--expr`   | Path to exprSet.csv (required)           |
 | `--outdir` | Output directory (created automatically) |
 
 ---
 
-## 📊 **4. Output Files**
+# 📊 **4. Output Files**
 
-The program generates four output files:
-
-### **4.1 miRWImpP.csv**
-
-Importance scores (*Imp*) from **S1 (seed-based RWR)**.
-
-### **4.2 miRWFlowP.csv**
-
-Flow scores from **S1**.
+Results are saved in the folder specified by `--outdir`.
 
 ---
 
-### **4.3 miRWImpE.csv**
+## **4.1 S1 Outputs (only if seed file exists)**
 
-Importance scores from **S2 (seed-free RWR)**.
+| File            | Description                           |
+| --------------- | ------------------------------------- |
+| `miRWImpP.csv`  | Importance scores from seed-based RWR |
+| `miRWFlowP.csv` | Flow scores from seed-based RWR       |
 
-### **4.4 miRWFlowE.csv**
+---
 
-Flow scores from **S2**.
+## **4.2 S2 Outputs (always generated)**
 
-Each output contains:
+| File            | Description                          |
+| --------------- | ------------------------------------ |
+| `miRWImpE.csv`  | Importance scores from seed-free RWR |
+| `miRWFlowE.csv` | Flow scores from seed-free RWR       |
 
-| Column    | Description                        |
-| --------- | ---------------------------------- |
-| Sample    | Sample identifier                  |
-| link      | Combined interaction (Node1_Node2) |
-| miRW-Imp  | Importance score                   |
-| miRW-Flow | Flow score                         |
+---
+
+### Output Format
+
+| Column    | Description                    |
+| --------- | ------------------------------ |
+| Sample    | Sample identifier              |
+| link      | Sorted node pair (NodeA_NodeB) |
+| miRW-Imp  | Importance score               |
+| miRW-Flow | Flow score                     |
 
 Example:
 
@@ -141,35 +175,38 @@ Example:
 Sample,link,miRW-Imp
 TCGA_01A,ARF5_RAB11FIP3,2.18618
 TCGA_01A,RAB11A_RAB11FIP3,2.51365
-...
 ```
 
 ---
 
-## 📐 **5. Code Structure**
+# 📐 **5. Code Structure**
 
 ```
-miRW-RWR/
+miRW/
 │
-├── miRWfunc1.py      # Functions for S1 (seed-based RWR)
-├── miRWfunc2.py      # Functions for S2 (seed-free RWR)
-├── run_miRW.py       # Main pipeline script
+├── miRWsingleLayer/
+│   ├── data_example/
+│   │   ├── CellMarkers.csv      # Optional
+│   │   ├── Links.csv            # Required
+│   │   └── exprSet.csv          # Required
+│   │
+│   ├── miRW.py                  # Main pipeline script
+│   ├── miRWfunc1.py             # Seed-based RWR functions (S1)
+│   ├── miRWfunc2.py             # Seed-free RWR functions (S2)
+│   ├── requirements.txt
+│   └── ReadMe.txt
 │
-├── data_example/     # Example input data
-│
-├── results/          # Outputs (created after running)
-├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## 🧪 **6. Example Workflow**
+# 🧪 **6. Example Workflow**
 
-To reproduce an example run:
+Example run that performs both S1 and S2:
 
 ```bash
-python run_miRW.py \
+python miRW.py \
   --seed data_example/CellMarkers.csv \
   --links data_example/Links.csv \
   --expr data_example/exprSet.csv \
@@ -178,23 +215,25 @@ python run_miRW.py \
 
 ---
 
-## 📚 **7. Citation**
+# 📚 **7. Citation**
 
-If you use this tool in your research, please cite:
+If you use **miRW** in your research, please cite:
 
-```
-
-```
+*(Add your publication or manuscript reference here)*
 
 ---
 
-## 📄 **8. License**
+# 📄 **8. License**
 
-This project is released under the **MIT License**, allowing free academic and commercial use.
+This project is released under the **MIT License**, allowing both academic and commercial use.
 
 ---
 
-## ❓ **9. Questions / Issues**
+# ❓ **9. Questions / Issues**
 
-If you encounter problems or have questions, feel free to open an issue on GitHub.
+If you encounter any issues or have feature requests, please open an Issue on GitHub:
+
+👉 [https://github.com/bioUroZC/miRW/issues](https://github.com/bioUroZC/miRW/issues)
+
+---
 
