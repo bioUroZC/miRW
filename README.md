@@ -1,5 +1,3 @@
----
-
 # **miRW: A Multi-Omics Random Walk Framework for Independent Construction of Sample-Specific Interaction Networks**
 
 This repository provides a complete implementation of the **miRW** framework, designed to compute sample-specific edge importance scores from gene or miRNA expression data using **Random Walk with Restart (RWR)**.
@@ -14,7 +12,6 @@ The workflow supports two computation modes:
 
 If `CellMarkers.csv` is not provided, the pipeline automatically runs **S2 only**.
 
----
 
 # 🔧 **1. Installation**
 
