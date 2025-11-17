@@ -143,8 +143,8 @@ Results are saved in the folder specified by `--outdir`.
 
 | File            | Description                           |
 | --------------- | ------------------------------------- |
-| `miRWImpP.csv`  | Importance scores from seed-based RWR |
-| `miRWFlowP.csv` | Flow scores from seed-based RWR       |
+| `miRWImpP.csv`  | Importance-based refined weight from seed-based RWR |
+| `miRWFlowP.csv` | Flow-based refined weight from seed-based RWR       |
 
 ---
 
@@ -152,8 +152,8 @@ Results are saved in the folder specified by `--outdir`.
 
 | File            | Description                          |
 | --------------- | ------------------------------------ |
-| `miRWImpE.csv`  | Importance scores from seed-free RWR |
-| `miRWFlowE.csv` | Flow scores from seed-free RWR       |
+| `miRWImpE.csv`  | Importance-based refined weight from seed-free RWR |
+| `miRWFlowE.csv` | Flow-based refined weight from seed-free RWR       |
 
 ---
 
@@ -207,7 +207,7 @@ python miRW.py \
   --seed data_example/CellMarkers.csv \
   --links data_example/Links.csv \
   --expr data_example/exprSet.csv \
-  --outdir demo_output/
+  --outdir results/
 ```
 
 ---
