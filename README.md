@@ -58,7 +58,7 @@ Cell-type–specific seed nodes for mode S1.
 
 | Column   | Description           |
 | -------- | --------------------- |
-| Marker   | Gene/miRNA identifier |
+| Marker   | Gene Symbol           |
 | CellType | Cell-type category    |
 
 If the file is missing, **S1 is skipped automatically**.
@@ -163,8 +163,8 @@ Results are saved in the folder specified by `--outdir`.
 | --------- | ------------------------------ |
 | Sample    | Sample identifier              |
 | link      | Sorted node pair (NodeA_NodeB) |
-| miRW-Imp  | Importance score               |
-| miRW-Flow | Flow score                     |
+| miRW-Imp  | Importance-based edge weight   |
+| miRW-Flow | Flow-based edge weight         |
 
 Example:
 
