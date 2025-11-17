@@ -190,8 +190,8 @@ miRW/
 │   ├── miRW.py                  # Main pipeline script
 │   ├── miRWfunc1.py             # Seed-based RWR functions (S1)
 │   ├── miRWfunc2.py             # Seed-free RWR functions (S2)
-│   ├── requirements.txt
-│   └── ReadMe.txt
+│   └── requirements.txt
+│  
 │
 └── README.md
 ```
