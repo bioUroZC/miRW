@@ -63,8 +63,8 @@ if has_seed_markers:
     print("\n[S1] Combined edge weights (head):")
     print(SeedS1_edge_weights.head())
 else:
-    SeedS1_edge_weights = None  # 占位，方便后面判断
-
+    SeedS1_edge_weights = None  
+    
 # ============================================
 #                 S2: no seeds
 # ============================================
