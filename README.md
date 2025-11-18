@@ -216,7 +216,7 @@ python miRW.py \
 
 If you use **miRW** in your research, please cite:
 
-*(Add your publication or manuscript reference here)*
+*===============================================*
 
 ---
 
