@@ -1,0 +1,48 @@
+Job started at: 2025-10-29 12:36:11
+Reading /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/human_ppin.sif.gz (may take some time if ID conversion is necessary) ... 
+Complete network: 21054 proteins / 317831 interactions
+Retrieving ENSEMBL 99 data from database homo_sapiens_core_99_38 (may take some minutes) ... 50% ... 100%.
+Retrieving current interaction data fom 3did (Mar 2025) ...
+Initializing PPIXpress with original network ... 
+40.69% of proteins could be annotated with at least one non-artificial domain,
+11.4% of protein interactions could be associated with at least one non-artificial domain interaction.
+Processing 1: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BL_A13J_01A.gz (linewise G) -> 6536 proteins / 55025 interactions (threshold: 3.0)
+Processing 2: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BL_A13J_11A.gz (linewise G) -> 6328 proteins / 51940 interactions (threshold: 3.0)
+Processing 3: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A20N_01A.gz (linewise G) -> 6519 proteins / 54784 interactions (threshold: 3.0)
+Processing 4: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A20N_11A.gz (linewise G) -> 6261 proteins / 51541 interactions (threshold: 3.0)
+Processing 5: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A20Q_01A.gz (linewise G) -> 6419 proteins / 52477 interactions (threshold: 3.0)
+Processing 6: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A20Q_11A.gz (linewise G) -> 6085 proteins / 50183 interactions (threshold: 3.0)
+Processing 7: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A20R_01A.gz (linewise G) -> 6639 proteins / 54880 interactions (threshold: 3.0)
+Processing 8: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A20R_11A.gz (linewise G) -> 5909 proteins / 48651 interactions (threshold: 3.0)
+Processing 9: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A20U_01A.gz (linewise G) -> 6757 proteins / 56674 interactions (threshold: 3.0)
+Processing 10: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A20U_11A.gz (linewise G) -> 5669 proteins / 45691 interactions (threshold: 3.0)
+Processing 11: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A20W_01A.gz (linewise G) -> 6658 proteins / 56494 interactions (threshold: 3.0)
+Processing 12: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A20W_11A.gz (linewise G) -> 7304 proteins / 60435 interactions (threshold: 3.0)
+Processing 13: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A2LA_01A.gz (linewise G) -> 7114 proteins / 58666 interactions (threshold: 3.0)
+Processing 14: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A2LA_11A.gz (linewise G) -> 5863 proteins / 47072 interactions (threshold: 3.0)
+Processing 15: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A2LB_01A.gz (linewise G) -> 6385 proteins / 53075 interactions (threshold: 3.0)
+Processing 16: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_BT_A2LB_11A.gz (linewise G) -> 5622 proteins / 46002 interactions (threshold: 3.0)
+Processing 17: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_CU_A0YN_01A.gz (linewise G) -> 6410 proteins / 53938 interactions (threshold: 3.0)
+Processing 18: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_CU_A0YN_11A.gz (linewise G) -> 6526 proteins / 54569 interactions (threshold: 3.0)
+Processing 19: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_CU_A0YR_01A.gz (linewise G) -> 6057 proteins / 51521 interactions (threshold: 3.0)
+Processing 20: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_CU_A0YR_11A.gz (linewise G) -> 6799 proteins / 55127 interactions (threshold: 3.0)
+Processing 21: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_GC_A3BM_01A.gz (linewise G) -> 6758 proteins / 56490 interactions (threshold: 3.0)
+Processing 22: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_GC_A3BM_11A.gz (linewise G) -> 6469 proteins / 51888 interactions (threshold: 3.0)
+Processing 23: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_GC_A3WC_01A.gz (linewise G) -> 6747 proteins / 57215 interactions (threshold: 3.0)
+Processing 24: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_GC_A3WC_11A.gz (linewise G) -> 6839 proteins / 54710 interactions (threshold: 3.0)
+Processing 25: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_GC_A6I3_01A.gz (linewise G) -> 5335 proteins / 44113 interactions (threshold: 3.0)
+Processing 26: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_GC_A6I3_11A.gz (linewise G) -> 5685 proteins / 44973 interactions (threshold: 3.0)
+Processing 27: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_GD_A2C5_01A.gz (linewise G) -> 6332 proteins / 52541 interactions (threshold: 3.0)
+Processing 28: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_GD_A2C5_11A.gz (linewise G) -> 6557 proteins / 53802 interactions (threshold: 3.0)
+Processing 29: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_GD_A3OP_01A.gz (linewise G) -> 6754 proteins / 55213 interactions (threshold: 3.0)
+Processing 30: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_GD_A3OP_11A.gz (linewise G) -> 6447 proteins / 52032 interactions (threshold: 3.0)
+Processing 31: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_GD_A3OQ_01A.gz (linewise G) -> 6717 proteins / 56397 interactions (threshold: 3.0)
+Processing 32: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_GD_A3OQ_11A.gz (linewise G) -> 7146 proteins / 57338 interactions (threshold: 3.0)
+Processing 33: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_K4_A3WV_01A.gz (linewise G) -> 6950 proteins / 57851 interactions (threshold: 3.0)
+Processing 34: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_K4_A3WV_11A.gz (linewise G) -> 6558 proteins / 53062 interactions (threshold: 3.0)
+Processing 35: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_K4_A54R_01A.gz (linewise G) -> 6604 proteins / 55708 interactions (threshold: 3.0)
+Processing 36: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_K4_A54R_11A.gz (linewise G) -> 6236 proteins / 50918 interactions (threshold: 3.0)
+Processing 37: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_K4_A5RI_01A.gz (linewise G) -> 6620 proteins / 55193 interactions (threshold: 3.0)
+Processing 38: /proj/c.zihao/work1/1NT/2String9/BLCA/PPIX/files/TCGA_K4_A5RI_11A.gz (linewise G) -> 6619 proteins / 53275 interactions (threshold: 3.0)
+Job finished at: 2025-10-29 12:36:52
+Total execution time: 41 seconds
